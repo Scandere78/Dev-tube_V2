@@ -1,12 +1,13 @@
 import { Menu } from "lucide-react"
 import devtube from "../assets/devtube.png"
+import { Button } from "../components/Button"
 
 export function PageHeader () {
     return <div className="flex gap-10 lg:gap-20 justify-between">
         <div className="flex gap-4 items-center flex-shrink-0">
-            <button>
+            <Button>
                 <Menu />
-            </button>
+            </Button>
             <a href="/">
                 <img src={devtube} className="h-6" alt="Logo de DevTube" />
             </a>
