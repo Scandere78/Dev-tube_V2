@@ -1,4 +1,4 @@
-import { Bell, Menu, Mic, Search, Upload, User } from "lucide-react"
+import { ArrowLeft, Bell, Menu, Mic, Search, Upload, User } from "lucide-react"
 import devtube from "../assets/devtube.png"
 import { Button } from "../components/Button"
 import { useState } from "react"
@@ -15,7 +15,7 @@ export function PageHeader () {
                 <img src={devtube} className="h-6" alt="Logo de DevTube" />
             </a>
         </div>
-        <form className={`md:flex gap-4 flex-grow justify-center ${showFullWidthSearch ? "hidden" : "flex"}`}>
+        <form className={`md:flex gap-4 flex-grow justify-center ${showFullWidthSearch ? "flex" : "hidden md:flex"}`}>
             <div className="flex flex-grow max-w-[600px]">
                 <input type="search" placeholder="Search"
                 className="rounded-l-full border border-secondary-border shadow-inner shadow-secondary py-1 px-4 w-full focus:border-blue-500"/>
@@ -31,6 +31,9 @@ export function PageHeader () {
             <Button onClick={() => setShowFullWidthSearch(true)} size="icon" variant="ghost" className="md:hidden">
                 <Search />
             </Button>
+            {showFullWidthSearch && ( <Button onClick={() => setShowFullWidthSearch(false)} type="button" size="icon" variant="ghost" className="flex-shrink-0">
+                <ArrowLeft/>
+            </Button>)}
             <Button type="button" size="icon" variant="ghost" className="md:hidden">
                 <Mic />
             </Button>
